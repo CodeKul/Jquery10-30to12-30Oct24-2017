@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Update Dom</title>
+</head>
+	<div id="divOne">
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur 
+	</div>
+	<p class="pOne">
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur 
+	</p>
+	<p class="pTwo">
+		Para Two
+	</p>
+	<p class="pTwo">
+		Para Two
+	</p>
+	<p class="pTwo">
+		Para Two
+	</p>
+	<div id="divTwo">
+		Div Two
+	</div>
+	<textarea id="txtara" cols="75" rows="5">
+		Codekul
+		Karve Road Pune
+		Maharashtra 
+	</textarea>
+<body>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$('.pTwo:first').text('Lorem ipsum dolor sit amet, consectetuer adipiscing <strong>elit. Aenean commodo ligula eget dolor.</strong> Aenean massa.');
+	$('#divTwo').html('Lorem ipsum dolor sit amet, consectetuer adipiscing <strong>elit. Aenean commodo ligula eget dolor.</strong> Aenean massa.');
+	$('#divTwo').prepend(" Melayer Swargate ");
+	$('#divTwo').append(" Melayer Swargate ");
+	$('#divOne').before(" Melayer Swargate ");
+	$('#divOne').after(" Melayer Swargate ");
+	$('#divTwo').empty();
+	$('#divOne').remove();
+</script>
+
+</html>

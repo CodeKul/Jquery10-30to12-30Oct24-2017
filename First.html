@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>First JQuery example</title>
+</head>
+
+<body>
+<input type="button" value="Hide" id="btn1">
+<p id="hide">
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+</p>
+<!--<input type="submit" value="click Once Again..." id="myid">
+<p id="show" style="display: none">
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+</p>
+
+<input type="submit" value="Please Click one more time.." class="myclass">
+
+<p id="show2" >
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+</p>-->
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$('#btn1').click(function(){
+		//alert("In the jQuery Syntax");
+		var get_value = $('#btn1').attr('value');
+			$('#hide').toggle('fast');
+		if (get_value == 'Show') {
+            $('#btn1').attr('value','Hide');
+        } else if (get_value == 'Hide') {
+            $('#btn1').attr('value','Show');
+        }
+	});
+	$(':button').click(function(){
+		//alert('Button is clicked');
+	});
+	$('#myid').click(function(){
+		//alert('ID is clicked');
+	});
+	$('.myclass').click(function(){
+		//alert('ID is clicked');
+	});
+	$('#myid').click(function(){
+		$('#show').show();
+	});
+	$('#show2').click(function(){
+		$('#show2').hide();
+	});
+	
+</script>
+
+</html>

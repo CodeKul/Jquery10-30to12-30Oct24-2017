@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Selectors</title>
+</head>
+
+<body>
+	<div id="one">
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+		</p>
+		<input type="text" value="Codekul">
+		<span>Please Read the content</span>
+	</div>
+	<div id="myID4">
+		<p class="myclass">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+		</p>
+		<p class="myclass2">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+		</p>
+		<p class="myclass3">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+		</p>
+		<p class="myclass3">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+		</p>
+	</div>
+	<input type="text" value="Codekul" id="inId">
+	<input type="text" value="Codekul" id="inId2">
+	<input type="button" value="Click Me">
+	<input type="button" value="Click Me Again">
+	<input type="submit" value="Click Me and go">
+	<a href="First.html" target="_blank" alt="new">Target Blank</a>
+	<a href="First.html" target="_self">Target Self</a>
+	<button type="button" id="HideA" >SHOW</button>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	//var count = $('*').length;
+	//alert(count);
+	//var count = $('#one').find('p').length;
+	//alert(count);
+	//$(document).ready(function(){
+	//	$('.myclass').css('background-//color','lightpink');
+	//});
+//	$(document).ready(function(){
+//		$(':button').attr("value","BYe...");
+//	});
+	
+//	$(':text').focusin(function(){
+//		$(this).css('background-color','lightpink');
+//	});
+//	$(':text').blur(function(){
+//		$(this).css('background-color','lightgray');
+//	});
+//	$(document).ready(function(){
+//		$('#myID4 p:last').css('color','darkblue');
+//	})
+	$(document).ready(function(){
+		$('#HideA').click(function(){
+			//$('[alt]').hide();
+			//$('[href]').hide();
+			//$('a[target!="_blank"]').hide();
+			//$('a[target="_blank"]').hide();
+		});
+	});
+	$(document).ready(function(){
+		$('#myID4 p:even').css('background-color','yellow');
+		$('#myID4 p:odd').css('background-color','lightgray');
+	});
+	
+</script>
