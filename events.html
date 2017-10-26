@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Events</title>
+	<style>
+		li:nth-child(odd) {
+			color: darkgoldenrod;
+			background-color: lightskyblue;
+			font-size: 20px;
+		}
+
+		li:nth-child(even) {
+			color: darkgoldenrod;
+			background-color: lightgreen;
+			font-size: 20px;
+		}
+
+		#box {
+			background-color: aqua;
+			font-size: 20px;
+			height: 250px;
+			width: 350px;
+			border: 2px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	<ul id="addMe">
+		<li>Home</li>
+		<li>Services</li>
+		<li>Gallery</li>
+		<li>Porfolio</li>
+		<li>About US</li>
+		<li>Contact US</li>
+	</ul>
+	<input type="text" id="input_id">
+	<br />
+	<button id="clickMe">ADD New</button>
+
+	<div id="box">
+
+
+	</div>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	/*$(function() {
+		alert("Welcome to jquery");
+	})
+
+	$('li:eq(3)').css('background-color', 'lightpink');
+
+	$('li').click(function(){
+		$(this).append(" X ");
+	})
+	
+	$('#clickMe').on("click","li",function(){
+		$(this).append("<li>New</li>");
+	})
+	$('#clickMe').on("click",function(){
+		$('li').append("<li>New</li>");
+	})
+
+	
+	$('#addMe').on("click mouseover", "li", function(event) {
+		$(this).prepend(" X ");
+	});
+	
+	
+	$('li').mouseenter(function(){
+		$(this).append(" Y ");
+	});
+	*/
+	$('#clickMe').on("click",function(){
+		var a = $('#input_id').val();
+		$('ul').append("<li>"+ a +"</li>");
+	})
+	
+	$('#box')
+		.mouseenter(function(event) {
+			console.log(event);
+			$(this).text("Mouse Enters");
+		})
+		.mousemove(function(e) {
+			console.log(e);
+			$(this).text("X Moving To :" + e.clientX + " Y Moving To :" + e.clientY);
+		})
+		.mouseup(function() {
+			$(this).text("mouse is uppppppped disable for down");
+		})
+		.mousedown(function() {
+			$(this).text("mouse is down disable for upppp");
+		})
+		.mouseout(function() {
+			$(this).text("mouse Out is working");
+		})
+		.mouseover(function() {
+			$(this).text("Mouse Over function or trigger");
+		})
+		.mouseleave(function() {
+			$(this).text("Mouse Leaves");
+		})
+	
+	$('li').each(function(i){
+		document.write("<br>index is : "+ i + $(this).html());
+	})
+</script>
