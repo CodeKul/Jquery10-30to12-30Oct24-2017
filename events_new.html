@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Events</title>
+	<style>
+		#mydiv{
+			font-size: 22px;
+		}
+		#validate{
+			font-size: 24px;
+			color: darkmagenta;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="validate">
+		
+	</div>
+	<form id="myform" action="event.html" method="get">
+		<input type="text" id="myName">
+		<textarea type="text" cols="250" rows="3" id="text_area"></textarea>
+		<select id="mydrop">
+			<option>Home</option>
+			<option>Services</option>
+			<option>Gallery</option>
+			<option>Portfolio</option>
+			<option>About Us</option>
+			<option>Contact Us</option>
+		</select>
+		<div id="mydiv">
+			
+		</div>
+		
+		<button type="submit">Click Me</button>
+		<ul>
+			<li><a href="event.html">Home</a></li>
+			<li><a href="First.html">Services</a></li>
+			<li><a href="#">Gallery</a></li>
+			<li><a href="#">Portfolio</a></li>
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+	</form>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script>
+	/*$('#myName').focusin(function() {
+		$('#myName').css('background-color', 'lightpink');
+	});
+	$('#myName').focusout(function() {
+		$('#myName').css('background-color', 'gray');
+	});
+	$('#text_area').focusin(function() {
+		$('#text_area').css('background-color', 'lightgreen');
+	});
+	$('#text_area').blur(function() {
+		$('#text_area').css('background-color', 'lightgray');
+	});
+	$('#text_area').keydown(function(e){
+		$('#mydiv').html(e.key);
+	});
+	$('#text_area').keyup(function(e){
+		console.log(e);
+	});
+	$('#text_area').keydown(function(e){
+		if(e.key == 'y')
+			{
+				alert("Right Key is Pressed");
+			}
+			else{
+				alert("Wrong key is pressed")
+			}
+	});*/
+	$('#mydrop').change(function(e){
+		console.log(e);
+		$('#mydiv').html(e.currentTarget.value);
+	})
+	$('#myform').submit(function(checkme){
+		
+		
+	})
+	function checkme()
+	{
+		if($('#myName').val() === ''){
+			$('#validate').html("Please Enter Name<br/>");
+		}
+		if($('#text_area').val() === ''){
+			$('#validate').append("Please Enter Message");
+		}
+		else
+			{
+				$('#validate').html("Successfully");
+				$('#myform').submit();
+			}
+	}
+	
+	$(li).click(function(e){
+		e.preventDefault();
+	})
+</script>
+
+</html>
