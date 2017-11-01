@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Traversing</title>
+	<style>
+		.div1{
+			padding: 10px;
+			height: 500px;
+			background: aqua;
+			width: 100%;
+			color: darkblue;
+		}
+		
+		.para1{
+			height: 150px;
+			background-color: rgba(255,255,255,0.5);
+			box-shadow: 15px 1px rgba(255,255,255,0.1);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="div1">
+		<p class="para1">
+			Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. 
+		</p>
+		<p class="para2">
+			Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+		</p>
+		<p class="para3">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+		</p>
+	</div>
+	<div class="div2">
+		 
+	</div>
+	<div class="div3">
+		 
+	</div>
+	<input type="button" id="mybtn" value="change the content">
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		console.log($('.div1').parent());
+		console.log($('.div1').parents());
+		console.log($('.div1').children());
+		console.log($('.div1').siblings());
+	$('.div1').children().next().html("This is text cjange by trversing the dom and next function");
+		$('.div1').children().next().css("font-size","20px");
+		
+	})
+	$('#mybtn').on("click",function(){
+		$('.div1').siblings().nextAll().html("Demo content for my siblings");
+		$('.div1').siblings().nextAll().css("padding","10px");
+		$('.div1').siblings().nextAll().css("background","lightpink");
+	})
+</script>
+
+
+</html>
