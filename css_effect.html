@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Traversing</title>
+	<style>
+		.myclass{
+			height: 150px;
+			width: 150px;
+			border:5px solid black;
+			background: aqua;
+		}
+		.myclass2{
+			height: 500px;
+			width: 500px;
+			border:5px solid black;
+			background: lightpink;
+			color: white;
+		}
+		
+	</style>
+</head>
+
+<body>
+    <div id="mydiv">
+    	
+    </div>
+    <img src="../Bootstrap_Template/images/s1.jpeg" height="150px" width="150px">
+ 
+	<input type="button" id="myid" value="Click Me">
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#mydiv').addClass("myclass");
+		$('#myid').on("click",function(){
+			if($('#mydiv').hasClass("myclass"))
+				{
+					$('#mydiv').removeClass("myclass");
+					$('#mydiv').addClass("myclass2");
+				}
+			
+		})
+	})
+</script>
+
+
+
+</html>
