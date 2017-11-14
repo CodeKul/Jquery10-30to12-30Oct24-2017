@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form>
+<input type="text" name="myName" id="myName">
+<input type="button" id="myId" value="click Me">
+<div id="content"></div>
+</form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$('#myId').click(function(){
+  var obj = { myName : $('#myName').val() };
+  var myobj2 = $('#myName').val();
+   $.get(
+           "get.php", 
+           'myName='+myobj2 , 
+            function(data){
+                $('#content').html(data);
+            }).error(function(){
+                 $('#content').html("error while loading the page");
+            }).complete(function(){
+                 $('#content').append("complete");
+            }).success(function(){
+                 $('#content').append("Success");
+           })
+})
+</script>
+</html>

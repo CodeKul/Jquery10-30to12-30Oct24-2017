@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form>
+<input type="text" name="myName" id="myName">
+<input type="button" id="myId" value="click Me">
+<div id="content"></div>
+</form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+   $('#myId').click(function(){
+   var obj = { myName : $('#myName').val() };
+   $.post("post.php", obj ,function(response){
+      $('#content').html(response);
+   }).error(function(){
+       $('#content').html(response);
+   }).success(function(){
+       $('#content').append("<h6>success</h6>");
+   }).complete(function(){
+       $('#content').append("<h6>complete</h6>");
+   })
+
+  })
+
+</script>

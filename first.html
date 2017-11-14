@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<body>
+<h1>Dynamic content by Ajax</h1>
+<form id="myform">
+<div id="loader"></div>
+<input type="button" value="getTime" id="myID">
+</form>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script>
+$('#myID').click(function() {
+					$.get("demo1.php", function(data) {
+						$('#loader').html(data);
+					}).error(function() {
+						$('#loader').append("error in page");
+					}).complete(function(){
+						$('#loader').append("complelte in page");
+					}).success(function(){
+						$('#loader').append("Success in page");
+					});
+				});
+
+</script>
+</html>

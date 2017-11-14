@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form>
+<input type="text" name="myName" id="myName">
+<input type="button" id="myId" value="click Me">
+<div id="content"></div>
+</form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$('#myId').click(function(){
+   var newData = {myName : $('#myName').val()};
+    $.ajax({
+       type: "POST",
+       data: newData,
+       url: "ajax.php",
+       success: function(data){
+           $('#content').html(data);
+       }
+})
+})
+
+</script>
