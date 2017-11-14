@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropable</title>
+    <style>
+        #drop {
+            height: 200px;
+            width: 200px;
+            background-color: #f0f0f0;
+            padding: 12px;
+        }
+
+        .border {
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--<span id="drag">Drag Me</span>-->
+    <span class="name">Codekul</span> /
+    <span class="name">Melayer</span> /
+    <span class="place">Karve Road</span>
+    <div id="drop">
+
+    </div>
+</body>
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.name, .place').draggable({
+            containment: 'document',
+            revert: true
+        })
+        //tolerence : fit,pointer,touch,in,intersect
+        $("#drop").droppable({
+            hoverClass: 'border',
+            toleranen: 'in',
+            accept: '.name',
+            over: function() {
+                $('#drop').html("droped In");
+            },
+            out: function() {
+$('#drop').html("droped Out");
+            },
+            drop: function() {
+$('#drop').html("droped BOx");
+            }
+        });
+    })
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragable</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+</head>
+
+<body>
+    <div class="drag">
+        <span id="drag">
+            You can drag Me
+        </span>
+    </div>
+    <div style="height: 800px;width: 800px;background-color: aqua">
+    <img src="../Bootstrap_Template/images/s1.jpeg" height="250px" width="250px">
+    </div>
+    <div id="draggable5" class="draggable ui-widget-content">
+  <p>I snap to a 80 x 80 grid</p>
+</div>
+</body>
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+    $('#drag').draggable();
+    $('img').draggable({
+        containment : 'parent',
+        cursor: 'pointer',
+        opcity:0.50,
+        grid: [80,80],
+        axis:'y',
+        revert:true,
+        revertDuration:'3000',
+        start:function(){
+            $('#drag').html("<h1>Drag Start</h1>");
+        },
+        drag:function(){
+            $('#drag').html("<h1>Draged</h1>");
+        },
+        stop:function(){
+            $('#drag').html("<h1>Draged Stop</h1>");
+        }
+    });
+    </script>
+</html>
