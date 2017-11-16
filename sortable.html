@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+   <ul id="sortable">
+       <li>Home</li>
+       <li>About US</li>
+       <li>Contact Us</li>
+   </ul>
+   <ul id="Gallery">
+       <li>Portfolio 1</li>
+       <li>Portfolio 2</li>
+       <li>Portfolio 3</li>
+   </ul>
+   <div id="display">
+       
+   </div>
+    
+</body>
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#sortable, #Gallery').sortable({
+            revert:true,
+            opacity:0.50,
+            cursor: 'pointer',
+            containment : 'document',
+            connectWith : '#Gallery, #sortable',
+         update:function(){
+             var display = $(this).text();
+             $('#display').html(" "+ display + " ");
+         }   
+        });
+        
+    })
+    
+    </script>
+</html>

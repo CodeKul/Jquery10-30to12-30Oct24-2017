@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="jquery-ui.theme.css">
+    <style>
+        #large_box {
+            background-color: aqua;
+            border: 2px solid black;
+            height: 800px;
+            width: 800px;
+        }
+
+        #box {
+            background-color: lightgray;
+            border: 2px solid black;
+            height: 150px;
+            width: 150px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="large_box">
+        <div id="box">
+
+        </div>
+    </div>
+</body>
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#box').resizable({
+            containment: 'parent',
+            autoHide: true,
+            animate:true,
+            ghost:true,
+            animateDuration:2000,
+            animateEasing:'swing',
+            minHeight: 100,
+            maxHeight:500,
+            minWidth:100,
+            maxWidth:500,
+            aspectRatio:9/10,
+            grid:[50,50],
+            handles: 'all' 
+        });
+    })
+</script>
+
+</html>

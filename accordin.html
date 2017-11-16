@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordin Demo</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <link rel="stylesheet" href="jquery-ui.theme.css">
+</head>
+
+<body>
+    <div id="accordion">
+        <h3>Paragraph 1</h3>
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+            </p>
+
+        </div>
+        <h3>Paragraph 2</h3>
+        <div>
+            <p>
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+            </p>
+
+        </div>
+        <h3>Paragraph 3</h3>
+        <div>
+            <p>
+                Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+            </p>
+
+        </div>
+        <h3>Paragraph 4</h3>
+        <div>
+            <p>
+                Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
+            </p>
+
+        </div>
+    </div>
+    <input type="button" class="ui-button ui-widget ui-corner-all" value="start">
+    <p>
+        <input type="submit" value="submit">
+        <input type="submit" value="button">
+    </p>
+</body>
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+    $(document).ready(function() {
+        var icons = {
+            header: "ui-icon-circle-arrow-e",
+            activeHeader: "ui-icon-circle-arrow-s"
+        };
+        $("#accordion").accordion({
+            icons: icons,
+            collapsible: true,
+            heightStyle: "content",
+            event: 'mouseover',
+            fillspace:true
+        });
+    })
+    $(function() {
+        $("input[type=submit]").button();
+    });
+</script>
+
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DatePicker</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+</head>
+
+<body>
+    <input type="text" id="date">
+    <input type="date">
+</body>
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#date').datepicker({
+            dateFormat: 'dd-MM-yy',
+            //minDate: '-10d',
+            //maxDate: '+1m +2d',
+            show: 'slideDown',
+            //showOtherMonths: false,
+            //selectOtherMonths: false,
+            showButtonPanel: true,
+            changeMonth: true,
+            changeYear: true,
+            numberOfMonths: 3,
+            showOn: "button",
+            buttonImage: "images/calender.png",
+            buttonImageOnly: true,
+            buttonText: "Select date"
+        });
+    })
+</script>
+
+</html>
